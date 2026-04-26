@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        jdk 'jdk'   // Make sure this name matches Jenkins config
+        jdk 'jdk17'   // Make sure this name matches Jenkins config
     }
 
     stages {
