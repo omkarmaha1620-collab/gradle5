@@ -2,18 +2,20 @@ pipeline {
     agent any
 
     tools {
-        jdk 'jdk21'   // Make sure this name matches Jenkins config
+        jdk 'jdk21'   // must match your Jenkins tool name
     }
 
     stages {
+
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/omkarmaha1620-collab/gradle1.git'
+                git branch: 'master', url: 'https://github.com/omkarmaha1620-collab/gradle1'
             }
         }
 
         stage('Build') {
             steps {
+                sh 'chmod +x gradlew'
                 sh './gradlew build'
             }
         }
@@ -33,10 +35,10 @@ pipeline {
 
     post {
         success {
-            echo 'Build and deployment successful!'
+            echo 'Build SUCCESSFUL ✅'
         }
         failure {
-            echo 'Build failed!'
+            echo 'Build FAILED ❌'
         }
     }
 }
