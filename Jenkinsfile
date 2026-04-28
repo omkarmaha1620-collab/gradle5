@@ -9,7 +9,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/omkarmaha1620-collab/gradle1'
+                git branch: 'master', url: 'https://github.com/omkarmaha1620-collab/gradle5'
             }
         }
 
